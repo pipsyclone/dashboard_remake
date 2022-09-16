@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="vendor/bs5/bootstrap.css">
+    <script src="vendor/bs5/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/popper.min.js"></script>
+
+    <link rel="stylesheet" href="assetdb/css/dashboard.css">
+    <link rel="stylesheet" href="assetdb/css/darkmode.css">
+    <link rel="stylesheet" href="vendor/animate/animate.css">
+    <link rel="stylesheet" href="assetdb/css/setting.css">
+
+    <link rel="stylesheet" href="vendor/icon6/all.css">
+    <script src="vendor/icon6/all.js"></script>
+</head>
+<body class="bg-grey-400 grey-400_body-bg-darkmode">
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-dark ps-2 pe-2 sidebar shadow border-end border-secondary" id="sidebar">
+            <a href="javascript:void(0)" class="sidebar-brand text-white" id="sidebar-brand">
+                <span>MyProject</span>
+            </a>
+
+            <hr class="divide">
+
+            <li class="nav-item">
+                <a href="javascript:void(0)" class="btn btn-sm btn-link text-decoration-none text-white w-100 text-start" id="btnDashboard">
+                    <b><i class="fa-solid fa-tachometer-alt me-2"></i> Dashboard</b>
+                </a>
+            </li>
+
+            <hr class="divide">
+
+            <li class="nav-item sidebar-sub-brand">
+                <i class="fa-solid fa-pager"></i> <span>Style</span>
+            </li>
+            <li class="nav-item mb-2">
+                <button class="btn btn-sm btn-link text-decoration-none text-white rounded-0 w-100 text-start d-flex" data-bs-toggle="collapse" data-bs-target="#collapseComponents" onclick="btnIconCollapseToggle('#iconAngleToggleComponents');">
+                    <div>
+                        <i class="fa-solid fa-gear me-2"></i> Components
+                    </div>
+                    <div class="ms-auto">
+                        <i class="fa-solid fa-angle-right" id="iconAngleToggleComponents"></i>
+                    </div>
+                </button>
+
+                <div class="collapse bg-white rounded-3 m-3 pt-3 pb-3 ps-2 pe-2" id="collapseComponents">
+                    <a href="javascript:void(0)" class="btn btn-sm btn-light w-100 text-start mb-2">Card</a>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-light w-100 text-start mb-2">Alert</a>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-light w-100 text-start mb-2">Other Components </a>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <button class="btn btn-sm btn-link text-decoration-none text-white rounded-0 w-100 text-start d-flex" data-bs-toggle="collapse" data-bs-target="#collapseUtilities" onclick="btnIconCollapseToggle('#iconAngleToggleUtilities');">
+                    <div>
+                        <i class="fa-solid fa-vest-patches me-2"></i> Utilities
+                    </div>
+                    <div class="ms-auto">
+                        <i class="fa-solid fa-angle-right" id="iconAngleToggleUtilities"></i>
+                    </div>
+                </button>
+
+                <div class="collapse bg-white rounded-3 m-3 pt-3 pb-3 ps-2 pe-2" id="collapseUtilities">
+                    <a href="javascript:void(0)" class="btn btn-sm btn-light w-100 text-start mb-2">Border</a>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-light w-100 text-start mb-2">Color</a>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-light w-100 text-start mb-2">Animations</a>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-light w-100 text-start mb-2">Other Utilities</a>
+                </div>
+            </li>
+
+            <hr class="divide">
+
+            <li class="nav-item mb-2">
+                <a href="javascript:void(0)" class="btn btn-sm btn-link text-decoration-none text-white rounded-0 w-100 text-start">
+                    <i class="fa-solid fa-code me-2"></i> My Snippet
+                </a>
+            </li>
+        </ul>
+        <!-- End Sidebar -->
+
+
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white white_bg-darkmode topbar mb-4">
+                    <button id="btnToggler" class="btn btn-link fs-4 text-secondary">
+                        <i class="fa fa-xmark" id="togglerDekstopIcon"></i>
+                        <i class="fa fa-bars" id="togglerMobileIcon"></i>
+                    </button>
+
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="javascript:void(0)" id="darkmodeToggle">
+                                <i class="fa-solid fa-moon fs-3 text-warning" id="icon-darkmode"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-link text-decoration-none text-dark" data-bs-toggle="dropdown">
+                                    <img src="assetdb/img/pp.jpg" class="dropdown-image rounded-circle me-2">
+                                    <span class="dropdown-name text-darkmode">Your Name</span>
+                                </button>
+
+                                <div class="dropdown-menu dropdown-menu-end me-3 animate__animated animate__fadeIn body-bg-darkmode p-2">
+                                    <a href="javascript:void(0)" class="dropdown-item btn btn-light light_btn-darkmode" id="btnSetting">
+                                        <i class="fa-solid fa-gear"></i> Setting
+                                    </a>
+                                    <a href="javascript:void(0)" class="dropdown-item btn btn-light light_btn-darkmode text-danger" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                                        <i class="fa-solid fa-sign-in-alt"></i> Logout
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Topbar -->
+
+                <!-- Content -->
+                <div class="container-fluid content-container">
+                    <div class="container" id="content-card">
+                        <!-- Content Row -->
+                        <div class="row">
+
+                            <!-- Earnings (Monthly) Card Example -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary h-100 py-2 bg-darkmode">
+                                    <div class="card-body text-darkmode">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                    Earnings (Monthly)</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Earnings (Monthly) Card Example -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-success h-100 py-2 bg-darkmode">
+                                    <div class="card-body text-darkmode">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Earnings (Annual)</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Earnings (Monthly) Card Example -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-info h-100 py-2 bg-darkmode">
+                                    <div class="card-body text-darkmode">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                                </div>
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="progress progress-sm mr-2">
+                                                            <div class="progress-bar bg-info" role="progressbar"
+                                                                style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pending Requests Card Example -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-warning h-100 py-2 bg-darkmode">
+                                    <div class="card-body text-darkmode">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                    Pending Requests</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3 border-0 rounded-3 bg-darkmode border-top-primary">
+                            <div class="card-body text-darkmode">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic porro commodi delectus assumenda rem error numquam dolorem optio corrupti amet est, placeat, sunt doloribus quibusdam, reprehenderit iste nam id impedit quos alias facere quaerat. Recusandae omnis nisi cumque, possimus veritatis odit cum necessitatibus alias repellat enim laudantium aspernatur sit ipsa inventore aut reiciendis dolorem delectus velit consequuntur. Blanditiis, tenetur atque rem hic eligendi repudiandae itaque nobis ipsam, deserunt sit quaerat accusantium eveniet quo numquam debitis unde velit perferendis quae eaque molestiae? Doloremque inventore similique perferendis, adipisci officia provident commodi, tenetur fuga nihil, consequuntur voluptas. Fuga ducimus iusto totam, iure voluptatum cumque suscipit exercitationem dolor nobis ipsam sit assumenda sequi eos aperiam, similique ut quasi quis ea maxime! Enim nobis corporis quibusdam voluptatibus minus corrupti debitis animi. Sit cupiditate, neque harum saepe aliquam expedita magnam enim voluptates eius sed et perferendis voluptatem? Debitis accusamus harum in ipsam consequuntur quis eaque quo natus veritatis magni maiores quos ab obcaecati, nulla ipsum. Eligendi, dignissimos provident. Error cumque eos quae tempora molestias. Quisquam sit provident deleniti iure error, praesentium dolorum modi fuga. Possimus quas magni nobis at maiores soluta sint fuga in saepe ea a laboriosam eos itaque eaque vitae minus facilis, cumque minima iste culpa? Doloremque harum repudiandae pariatur, expedita incidunt atque quibusdam sit laborum voluptatem consequatur delectus ipsum, ad animi molestiae tempore dignissimos voluptatibus hic recusandae aliquam necessitatibus voluptatum qui ex id quia. Dignissimos, dolorum. Similique laborum dicta sit fugit, qui illo, ipsam praesentium, ea sed soluta aliquid animi beatae. Necessitatibus unde iure quo eveniet sint natus consectetur, blanditiis, repudiandae dolore molestias nemo delectus reprehenderit minima sapiente ut! Aperiam voluptate doloribus sit fugiat iste voluptates voluptatem eum dolores explicabo pariatur? Ipsa architecto voluptate eius. Veritatis, ex! Et deleniti illum reprehenderit quia consectetur temporibus natus debitis, facere corrupti rerum, error distinctio ipsum vero facilis, voluptatibus doloribus! Fugit delectus facilis labore nostrum quis atque dignissimos placeat provident quae excepturi quo vitae hic facere culpa molestias iusto, nihil incidunt suscipit perferendis tempore? Cupiditate laborum iste, ad quas quisquam voluptatum doloremque facere? Soluta ratione nam alias. Vitae voluptatum distinctio odit quisquam, accusamus dolorum ipsa rem consectetur, aspernatur delectus sit iusto ducimus veritatis, reprehenderit labore voluptatem? Asperiores cupiditate ipsum laborum iste illum unde voluptatibus quisquam perspiciatis doloremque, iusto, vero veniam, temporibus beatae. Nemo quas in eligendi beatae possimus necessitatibus cupiditate. Omnis voluptate et, impedit quos ex consectetur commodi facere porro delectus aspernatur distinctio enim eligendi repellendus sunt architecto ea recusandae vel nam. Similique consequatur soluta quaerat labore tenetur maiores odio placeat necessitatibus perspiciatis quia officia vitae corporis repellat, nulla ab. Deleniti quasi accusamus perferendis distinctio maiores aliquam sit suscipit sequi, cum quo earum repudiandae eius? Veniam reiciendis a soluta. A ipsam fugiat distinctio nobis vel ut deserunt, aliquid impedit eligendi nesciunt temporibus laborum? Tenetur repellendus veniam molestias et dicta deserunt autem, architecto omnis vel voluptatum voluptatem impedit nesciunt, possimus ea tempora repellat cum nulla maxime vero expedita provident. Cupiditate sed eaque neque iure at quo, soluta ullam aliquam quod aliquid officia expedita impedit consequuntur fugit ea facilis.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container" id="content-setting">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-4 m-1">
+                                <div class="card mx-auto bg-darkmode border-0 border-top-success">
+                                    <div class="card-body">
+                                        <a class="btn btn-light light_btn-darkmode w-100 text-start mb-2" id="btnProfileInformation">
+                                            <i class="fa-solid fa-user me-3"></i> Profile Information
+                                        </a>
+                    
+                                        <a class="btn btn-light light_btn-darkmode w-100 text-start mb-2" id="btnAccountSetting">
+                                            <i class="fa-solid fa-users me-3"></i> Account Setting
+                                        </a>
+                    
+                                        <a class="btn btn-light light_btn-darkmode w-100 text-start mb-2" id="btnSecuritySetting">
+                                            <i class="fa-solid fa-shield me-3"></i> Security
+                                        </a>
+                    
+                                        <a class="btn btn-light light_btn-darkmode w-100 text-start mb-2" id="btnPreferences">
+                                            <i class="fa-solid fa-gears me-3"></i> Preferences
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-sm-7 m-1">
+                                <!-- {{-- Profile Information Setting --}} -->
+                                <div class="card bg-darkmode border-0 border-top-info" id="profileInformationContainer">
+                                    <div class="card-body text-darkmode">
+                                        <div class="mb-3">
+                                            <label for="">Name</label>
+                                            <input type="text" id="name" class="form-control input-darkmode mt-3" value="Apip Rahman Syahidan">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="">Email</label>
+                                            <input type="text" id="email" class="form-control input-darkmode mt-3" value="apipskaxx@gmail.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="">Bio</label>
+                                            <textarea id="bio" rows="7" class="form-control input-darkmode mt-3">Menjadi Baik adalah sebuah tujuan.</textarea>
+                                        </div>
+                    
+                                        <button class="btn btn-primary btn-sm rounded-0" id="saveProfile">Save</button>
+                                    </div>
+                                </div>
+                    
+                                <!-- {{-- Account Setting --}} -->
+                                <div class="card d-none bg-darkmode border-0 border-top-danger" id="accountContainer">
+                                    <div class="card-body">
+                                        <p class="text-danger">Delete Account</p>
+                    
+                                        <p class="text-darkmode">
+                                            Jika anda menghapus akun anda, maka akun anda tidak akan kembali lagi, 
+                                            <br>
+                                            karena penghapusan ini bersifat permanen.
+                                        </p>
+                    
+                                        <div class="form-floating mb-3 grey-500_text-darkmode">
+                                            <input type="text" class="form-control input-darkmode" id="email" placeholder="Email">
+                                            <label for="email">Email</label>
+                                        </div>
+                    
+                                        <button class="btn btn-danger rounded-0" id="deleteAccount">Delete Account</button>
+                                    </div>
+                                </div>
+                    
+                                <!-- {{-- Security Setting --}} -->
+                                <div class="card d-none bg-darkmode border-0 border-top-primary" id="securityContainer">
+                                    <div class="card-body text-darkmode">
+                                        <p>Change Password</p>
+                    
+                                        <div class="form-floating mt-3 mb-3 grey-500_text-darkmode">
+                                            <input type="text" class="form-control input-darkmode" id="password" placeholder="Password">
+                                            <label for="password">Password</label>
+                                        </div>
+                                        <div class="form-floating mt-3 mb-3 grey-500_text-darkmode">
+                                            <input type="text" class="form-control input-darkmode" id="confirm_password" placeholder="Confirm Password">
+                                            <label for="confirm_password">Confirm Password</label>
+                                        </div>
+                    
+                                        <button class="btn btn-primary rounded-0" id="changePassword">Change Password</button>
+                                    </div>
+                                </div>
+                    
+                                <!-- {{-- Preferences Setting --}} -->
+                                <div class="card d-none bg-darkmode border-0 border-top-warning" id="preferencesContainer">
+                                    <div class="card-body text-darkmode">
+                                        <p>Preferences Settings</p>
+                                        <hr>
+                                        <div class="d-flex">
+                                            <p>Aktifkan Transisi </p>
+                                            <button class="btn btn-primary btn-sm ms-auto rounded-0 align-self-start" id="btnTransisiSet">Aktifkan</button>
+                                        </div>
+                                        <small class="grey-500_text-darkmode">Ketika anda mengganti tema maka akan ada transisi selama 1 detik.</small>
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Content -->
+            </div>
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white p-3 white_bg-darkmode mt-5">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto text-darkmode">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer -->
+
+        </div>
+
+    </div>
+
+    <div id="modal">
+        <!-- Logout -->
+        <div class="modal modal-alert py-5 animate__animated animate__bounceIn" style="margin-top: 180px;" id="logoutModal">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-4 shadow bg-darkmode text-darkmode">
+                    <div class="modal-body p-4 text-center">
+                        <h5 class="mb-0">Apakah anda yakin ingin logout ?</h5>
+                        <p class="mb-0"></p>
+                    </div>
+                    <div class="modal-footer flex-nowrap p-0">
+                        <a href="#" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-right"><strong>Ya</strong></a>
+                        <a href="javascript:void(0);" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0" data-bs-dismiss="modal">Tidak</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assetdb/js/darkmode.js"></script>
+<script src="assetdb/js/dashboard.js"></script>
+<script src="contentChanger.js"></script>
+
+<!-- Use this if u use jquery and laravel -->
+<!-- <script src="assetdb/js/setting.js"></script> --> 
+</html>
